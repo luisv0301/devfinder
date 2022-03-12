@@ -1,10 +1,3 @@
-:root {
-  --gray-100: #f8fafc;
-  --gray-200: #e2ebf3;
-
-  --text-color: #475569;
-  --heading-color: #0f172a;
-}
 /* Box sizing rules */
 *,
 *::before,
@@ -39,6 +32,10 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  --gray-100: #f8fafc;
+  --gray-200: #e2ebf3;
+  --text-color: #475569;
+  --heading-color: #0f172a;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -83,14 +80,11 @@ select {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root{
+body.dark {
   --gray-100: #22344e;
-  --gray-200: #22344e;
-
+  --gray-200: #344865;
   --text-color: hsl(210deg 40% 98% / 70%);
   --heading-color: hsl(210deg 40% 98%);
-  }
 }
 
 h1,

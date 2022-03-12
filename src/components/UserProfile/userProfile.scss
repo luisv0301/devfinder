@@ -2,14 +2,11 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2rem;
+  gap: 1rem 2rem;
   margin-block-start: 1rem;
   padding: 2rem;
   border-radius: 6px;
   background: var(--gray-200);
-  &__not-found{
-      margin-block-start: 1rem;
-  }
   &__photo {
     border-radius: 50%;
     width: 8.5rem;
@@ -47,7 +44,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-
     grid-column-start: 2;
     li {
       display: flex;
@@ -72,5 +68,10 @@
     &__description {
       grid-column: 1/-1;
     }
+  }
+}
+@media (max-width: 520px) {
+  .userProfile__links {
+    grid-template-columns: 1fr;
   }
 }

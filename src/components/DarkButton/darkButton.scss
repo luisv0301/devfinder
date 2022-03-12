@@ -1,0 +1,13 @@
+.darkButton{
+    display: grid;
+    border-radius: 50%;
+    padding: 0.5rem;
+    place-items: center;
+    border: none;
+    background-color: var(--gray-200);
+
+    svg{
+        width: 1.5rem;
+        color: var(--text-color);
+    }
+}

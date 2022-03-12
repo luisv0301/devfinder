@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import "./userProfile.scss";
 
 export default function UserProfile({
@@ -17,14 +18,20 @@ export default function UserProfile({
     company,
   },
 }) {
-  if (message === "Not Found")
-    return <h2 className="userProfile__not-found">El usuario no existe</h2>;
+  if (message == "Not Found") return null;
+
   const date = new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
   }).format(new Date(created_at));
 
   return (
-    <div className="userProfile">
+    <motion.div
+      className="userProfile"
+      key="card"
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.5, opacity: 0 }}
+    >
       <img src={avatar_url} alt={name} className="userProfile__photo" />
       <div className="userProfile__header">
         <div className="userProfile__title">
@@ -33,7 +40,9 @@ export default function UserProfile({
         </div>
         <p>Joined at {date}</p>
       </div>
-      <p className="userProfile__description">{bio || "Not description available"}</p>
+      <p className="userProfile__description">
+        {bio || "Not description available"}
+      </p>
       <ul className="userProfile__stats">
         <li>
           <p>Repos</p>
@@ -120,6 +129,6 @@ export default function UserProfile({
           {company || "Not available"}
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 }
